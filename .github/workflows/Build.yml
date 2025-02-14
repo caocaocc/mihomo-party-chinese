@@ -31,7 +31,9 @@ jobs:
           ref: fa3c4121460ebf4ca4412a38b29a7f3f07075c9b
           path: mihomo-party
       - name: Customize
+        shell: bash
         run: |
+          cp ../customize.sh ./
           chmod +x customize.sh
           ./customize.sh
         working-directory: mihomo-party
@@ -97,7 +99,9 @@ jobs:
           ref: fa3c4121460ebf4ca4412a38b29a7f3f07075c9b
           path: mihomo-party
       - name: Customize
+        shell: bash
         run: |
+          cp ../customize.sh ./
           chmod +x customize.sh
           ./customize.sh
         working-directory: mihomo-party
@@ -146,7 +150,6 @@ jobs:
             dist/*portable.7z
           body_path: changelog.md
           token: ${{ secrets.GITHUB_TOKEN }}
-
   linux:
     strategy:
       fail-fast: false
@@ -166,6 +169,7 @@ jobs:
           path: mihomo-party
       - name: Customize
         run: |
+          cp ../customize.sh ./
           chmod +x customize.sh
           ./customize.sh
         working-directory: mihomo-party
@@ -227,6 +231,7 @@ jobs:
           path: mihomo-party
       - name: Customize
         run: |
+          cp ../customize.sh ./
           chmod +x customize.sh
           ./customize.sh
         working-directory: mihomo-party
@@ -287,6 +292,7 @@ jobs:
           path: mihomo-party
       - name: Customize
         run: |
+          cp ../customize.sh ./
           chmod +x customize.sh
           ./customize.sh
         working-directory: mihomo-party
