@@ -118,8 +118,10 @@ jobs:
         with:
           name: ${{ matrix.win7 && 'Win7' || matrix.catalina && 'Catalina' || matrix.os == 'windows-latest' && 'Windows' || matrix.os == 'ubuntu-latest' && 'Linux' || 'MacOS' }} ${{ matrix.arch }}
           path: |
-            mihomo-party/dist/*.sha256
-            ${{ matrix.os == 'windows-latest' && 'mihomo-party/dist/*setup.exe mihomo-party/dist/*portable.7z' || matrix.os == 'ubuntu-latest' && 'mihomo-party/dist/*.deb mihomo-party/dist/*.rpm' || 'mihomo-party/dist/*.pkg' }}
+            mihomo-party/dist/mihomo-party*
+            !mihomo-party/dist/mihomo-party*blockmap
+            mihomo-party/latest.yml
+            mihomo-party/changelog.md
           if-no-files-found: error
 
   pre-release:
